@@ -1,0 +1,68 @@
+html {
+    color: var(--body-color);
+    // font-family: var(--body-font), sans-serif;
+    font-size: var(--font-size);
+}
+
+.big-text {
+    font-size: 1.25rem;
+}
+
+h1,
+.h1 {
+    font-size: $h1-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.subtitle {
+    font-family: var(--heading-font), sans-serif;
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+    text-transform: var(--headings-transform, 'none');
+}
+
+h2 {
+    border-bottom: none;
+}
+
+
+
+h2,
+h3 {
+    break-after: avoid;
+}
+
+.footnotes {
+    font-size: 90%;
+
+    hr {
+        border: none;
+
+        &::before {
+            content: "Footnotes:";
+        }
+    }
+}
+
+.footnote-break {
+    width: 1in;
+}
+
+.references a[href^=http]:not([class=uri])::after {
+    content: none;
+}
+
+p {
+    orphans: 3;
+    widows: 3;
+}

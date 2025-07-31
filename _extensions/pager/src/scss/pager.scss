@@ -1,0 +1,88 @@
+// plan to manage both bootstrap scss and custom variables from yaml: 
+// generate pager.css overriding BS variables that can be overridden
+// i.e. ones that no other variables depend on
+// then set overrides for others with var(--variable-name) in css
+// otherwise would require user to recompile scss with their variables
+@use "sass:meta";
+@use "sass:color";
+
+/*-- scss:uses --*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://db.onlinewebfonts.com/c/fa6584b49f2dbb17b7483544bfa0b654?family=GT+Pressura+Pro+Bold'); 
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+// Toggle global options
+$enable-gradients: false;
+$enable-shadows: false;
+
+/*-- scss:functions --*/
+@import 'bootstrap/scss/functions';
+
+/*-- scss:defaults --*/
+// override bootstrap defaults
+// watch out for inconsistent labeling of heading(s) variable names
+// user variables from yaml
+$font-family-base: var(--body-font), 'sans-serif';
+$headings-font-family: var(--heading-font), 'sans-serif';
+$headings-color: var(--heading-color);
+$font-family-code: var(--mono-font), 'monospace';
+$primary-gray: var(--primary-gray, #4d5f7f);
+$sidebar-color: var(--sidebar-color, #edfafc);
+$aside-color: var(--aside-color, #fdfbed);
+$logo-color: var(--logo-color) $primary-gray;
+
+// hardcoded overrides
+$headings-font-weight: 700;
+$table-striped-bg-factor: 0;
+$h1-font-size: 3rem;
+$h2-font-size: 2.25rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+$body-bg: transparent;
+
+
+/*-- bootstrap --*/
+// required
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+
+// // // optional
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/utilities';
+
+/*-- scss:mixins --*/
+
+/*-- scss:rules --*/
+// override column spacing that weasyprint can't parse
+.row {
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+.row > * {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+/*-- user-defined rules --*/
+
+@import 'basics';
+@import 'grid';
+@import 'front-back';
+@import 'layout';
+@import 'text';
+@import 'lists';
+@import 'mixins';
+@import 'tables';
+@import 'figures';
+@import 'toc';
+

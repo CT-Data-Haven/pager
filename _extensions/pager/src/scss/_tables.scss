@@ -1,0 +1,21 @@
+span.na {
+    color: $gray-600;
+}
+
+table {
+    border-bottom: 1px solid $table-border-color;
+    margin-bottom: $spacer * 3;
+    break-inside: avoid;
+
+    thead th {
+        font-weight: 500;
+    }
+
+    &.table-sm th, &.table-sm td {
+        line-height: 1.25em;
+    }
+}
+
+tr[grouplength] {
+    font-weight: 600;
+}

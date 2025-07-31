@@ -1,0 +1,36 @@
+/*-- inserts styles into html from yaml for css to use --*/
+/*-- if no value given in yaml, fall back to bootstrap where applicable --*/
+:root {
+    --body-font: $if(mainfont)$"$mainfont$"$endif$;
+    --font-size: $if(fontsize)$$fontsize$$endif$;
+    --body-color: $if(fontcolor)$$fontcolor$$endif$;
+    --link-color: $if(linkcolor)$$linkcolor$$endif$;
+    --mono-font: $if(monofont)$"$monofont$"$endif$;
+
+    --heading-font: $if(heading-font)$"$heading-font$"$endif$;
+    --heading-color: $if(color.heading)$$color.heading$$endif$;
+    --caption-color: $if(color.caption)$$color.caption$$else$$fontcolor$$endif$;
+    --sidebar-color: $if(color.sidebar)$$color.sidebar$$endif$;
+    --aside-color: $if(color.aside)$$color.aside$$endif$;
+    --primary-gray: $if(color.gray)$$color.gray$$else$"#555555"$endif$;
+
+    --logo-text: $if(logo.text)$"$logo.text$"$endif$;
+    --logo-img: $if(logo.img)$$logo.img$$endif$;
+    --logo-font: $if(logo.font)$"$logo.font$"$endif$;
+    --logo-color: $if(logo.color)$$logo.color$$endif$;
+
+    --cover-img: $if(cover.img)$url($cover.img$)$endif$;
+    --cover-own-page: $if(cover.cover-page)$true$else$false$endif$;
+
+    --page-width: $if(page.width)$$page.width$$endif$;
+    --page-height: $if(page.height)$$page.height$$endif$;
+    --margin-left: $if(margin-left)$$margin-left$$endif$;
+    --margin-right: $if(margin-right)$$margin-right$$endif$;
+    --margin-top: $if(margin-top)$$margin-top$$endif$;
+    --margin-bottom: $if(margin-bottom)$$margin-bottom$$endif$;
+    --line-height: $if(linestretch)$$linestretch$$endif$;
+
+    --headings-transform: $if(headings.uppercase)$uppercase$endif$;
+    --cover-h1-size: $if(headings.title-size)$$headings.title-size$$endif$;
+    --cover-h2-size: $if(headings.subtitle-size)$$headings.subtitle-size$$endif$;
+}

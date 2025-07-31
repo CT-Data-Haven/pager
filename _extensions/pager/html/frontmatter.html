@@ -1,0 +1,18 @@
+<div class="frontmatter-page">
+    $if(toc)$
+        <nav id="$idprefix$TOC" role="doc-toc">
+        
+            $if(toc-title)$
+                <h2 id="$idprefix$toc-title" class="no-break">$toc-title$</h2>
+            $endif$ 
+            
+            $table-of-contents$
+        </nav>
+    $endif$
+
+    $for(frontmatter)$
+        <div class="blurb">
+            $frontmatter$
+        </div>
+    $endfor$
+</div>

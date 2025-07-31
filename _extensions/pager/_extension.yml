@@ -1,0 +1,85 @@
+title: DataHaven Pager
+author: camille-s
+version: 0.1.0
+quarto-required: ">=1.7.0"
+contributes:
+  formats:
+    common:
+      minimal: true
+      embed-resources: true
+      theme: none
+      section-divs: true
+      format-links: false
+      fig-width: 7
+      fig-height: 4.5
+      fig-cap-location: top
+      tbl-cap-location: top
+      fig-align: left
+
+      mainfont: 'Lato'
+      fontsize: 14px
+      fontcolor: "#111111"
+      linkcolor: "#111111"
+      monofont: "Roboto Mono"
+      linestretch: 1.2
+      margin-left: 0.5in
+      margin-right: 0.5in
+      margin-top: 0.75in
+      margin-bottom: 0.75in
+      
+      heading-font: "Barlow"
+      is-draft: true
+
+      color:
+        heading: "#3896ee"
+        caption: "#5c6fac"
+        sidebar: "#edfaffee"
+        aside: "#fdfbedee"
+        gray: "#4d5f7f"
+ 
+      logo:
+        use-text: true
+        text: "DataHaven"
+        font: "GT Pressura Pro Bold"
+        img: null
+        color: "#4d5f7f"
+      cover:
+        cover-page: true
+        add-logo: true
+        img: 'cover.svg'
+      page:
+        width: 8.5in
+        height: 11in
+      headings:
+        uppercase: true
+        title-size: 3.5rem
+        subtitle-size: 2rem
+      marginalia:
+        title: top-left
+        page-number: top-right
+        logo: bottom-left
+        draft: top-center
+        draft-include-date: true
+        chapter: null
+
+      toc: true
+      toc-depth: 2
+      toc-location: body
+      prefer-html: true
+      fig-format: "svg"
+
+    html:
+      template: "html/template.html"
+      css: "pager.css"
+      template-partials:
+        - "html/title-block.html"
+        - "html/styles.html"
+        - "html/frontmatter.html"
+        - "html/metadata.html"
+        - "html/marginalia.html"
+
+    pdf:
+      template: "html/template.html"
+      css: "pager.css"
+      pdf-engine: weasyprint
+

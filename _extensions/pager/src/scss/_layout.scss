@@ -1,0 +1,173 @@
+@import 'mixins';
+
+@page {
+    size: var(--page-width, 8.5in) var(--page-height, 11in);
+    margin-top: var(--margin-top, 1in);
+    margin-bottom: var(--margin-bottom, 1in);
+    margin-left: var(--margin-left, 0.75in);
+    margin-right: var(--margin-right, 0.75in);
+}
+
+/* cover */
+@page cover {
+    background-color: transparent;
+    background-image: var(--cover-img);
+    background-position: center;
+    padding: $spacer;
+
+    @top-left {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+    @bottom-left {
+        content: none;
+    }
+    @bottom-right {
+        content: none;
+    }
+    counter-set: page 0;
+}
+
+header#title-block-header {
+    page: cover;
+    // @if var(--cover-own-page) {
+    //     page: cover;
+    // } @else {
+    //     page: chapter;
+    // }
+}
+
+@page frontmatter {
+    @top-left {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+    @bottom-left {
+        content: none;
+    }
+    @bottom-right {
+        content: none;
+    }
+}
+
+.frontmatter-page {
+    page: frontmatter;
+}
+
+
+h1.title {
+    string-set: title content();
+}
+
+section.level2 {
+    break-before: always;
+    page: chapter;
+    &.no-break {
+        break-before: unset;
+    }
+}
+
+section h2 {
+    string-set: chapter-h2 content();
+}
+
+// don't need special blocks for title or draft, those are created in html template
+span#page-number {
+    content: counter(page);
+}
+
+span#logo {
+    @include logo(var(--logo-text), var(--logo-font), var(--primary-gray), 1.5rem);
+}
+
+span#chapter-heading {
+    content: string(chapter-h2);
+}
+
+div#marginalia-blocks {
+    #marginalia-top-left {
+        position: running(top-left);
+        @include marginalia;
+    }
+    #marginalia-top-center {
+        position: running(top-center);
+        @include marginalia;
+    }
+    #marginalia-top-right {
+        position: running(top-right);
+        @include marginalia;
+    }
+    #marginalia-bottom-left {
+        position: running(bottom-left);
+        @include marginalia;
+    }
+    #marginalia-bottom-center {
+        position: running(bottom-center);
+        @include marginalia;
+    }
+    #marginalia-bottom-right {
+        position: running(bottom-right);
+        @include marginalia;
+    }
+}
+
+@page chapter {
+    @top-left {
+        content: element(top-left);
+        text-align: left;
+    }
+
+    @top-center {
+        content: element(top-center);
+        text-align: center;
+    }
+
+    @top-right {
+        content: element(top-right);
+        text-align: right;
+    }
+
+    @bottom-left {
+        content: element(bottom-left);
+        text-align: left;
+    }
+
+    @bottom-center {
+        content: element(bottom-center);
+        text-align: center;
+    }
+
+    @bottom-right {
+        content: element(bottom-right);
+        text-align: right;
+    }
+}
+
+
+@media print {
+    #TOC {
+        display: block !important;
+    }
+    
+    a {
+        color: $body-color;
+    } 
+}
+
+@media screen {
+    body {
+        margin: $spacer * 3;
+    }
+
+    div#marginalia-blocks {
+        display: none;
+    }
+
+    section h2 {
+        margin-top: 2rem;
+    }
+}

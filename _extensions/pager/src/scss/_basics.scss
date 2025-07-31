@@ -1,0 +1,45 @@
+@import 'mixins';
+
+div.no-break,
+div.row {
+    break-inside: avoid;
+}
+
+// page break helpers
+div.break-after {
+    break-after: always;
+}
+
+div.break-before {
+    break-before: always;
+}
+
+.pager-sidebar {
+    @include side-content($sidebar-color);
+}
+
+.pager-aside {
+    @include side-content($aside-color);    
+}
+.pager-aside-left {
+    @include side-content($aside-color);   
+    float: left;
+}
+.pager-aside-right {
+    @include side-content($aside-color);    
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo::after {
+    @include logo(var(--logo-text), var(--logo-font), var(--logo-color), 2rem)
+}
+
+// override quarto's override of bootstrap negative margins
+// #quarto-document-content .row {
+//     margin-left: -0.75rem !important;
+//     margin-right: -0.75rem !important;
+// }

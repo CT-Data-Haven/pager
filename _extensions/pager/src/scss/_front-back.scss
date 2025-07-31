@@ -1,0 +1,30 @@
+header#title-block-header {
+    h1.title {
+        line-height: 0.9;
+        margin-top: 1.5em;
+        padding: ($spacer * 0.4) 0;
+        font-size: var(--cover-h1-size, $h1-font-size * 1.25);
+    }
+    h2.subtitle {
+        font-size: var(--cover-h2-size, $h2-font-size);
+    }
+    #title-block-subheader {
+        p {
+            margin-bottom: 0.1em;  
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media print {
+    .cover-page {
+        position: relative;
+    }
+    #title-block-subheader {
+        margin-top: $spacer * 2;
+    }
+    .frontmatter-page div.blurb {
+        position: absolute;
+        bottom: 0;
+    }
+}

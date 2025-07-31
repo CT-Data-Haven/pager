@@ -1,0 +1,44 @@
+<div id="marginalia-blocks">
+    <!-- title: div + pandoc variable -->
+    $if(marginalia.title)$
+        <span id="marginalia-$marginalia.title$">
+            $title$
+        </span>
+    $endif$
+
+    <!-- page number: div + css -->
+    $if(marginalia.page-number)$
+        <span id="marginalia-$marginalia.page-number$">
+            <span id="page-number"></span>
+        </span>
+    $endif$
+
+    <!-- logo: div + css -->
+    $if(marginalia.logo)$
+        <span id="marginalia-$marginalia.logo$">
+            <span id="logo"></span>
+        </span>
+    $endif$
+
+    <!-- draft label: possibly include date -->
+    $if(is-draft)$
+        $if(marginalia.draft)$
+            <span id="marginalia-$marginalia.draft$">
+                <span id="draft-label">
+                    $if(marginalia.draft-include-date)$
+                        DRAFT &mdash; $date$
+                    $else$
+                        DRAFT
+                    $endif$
+                </span>
+            </span>
+        $endif$
+    $endif$
+
+    <!-- chapter label: based on css h2 content -->
+    $if(marginalia.chapter)$
+        <span id="marginalia-$marginalia.chapter$">
+            <span id="chapter-heading"></span>
+        </span>
+    $endif$
+</div>

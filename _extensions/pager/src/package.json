@@ -1,0 +1,20 @@
+{
+  "name": "pager",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "sass -I node_modules scss/pager.scss ../pager.css --no-source-map"
+  },
+  "keywords": [],
+  "author": "camille-s",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  }
+}

@@ -1,0 +1,16 @@
+img {
+    max-width: 100%;
+}
+
+div.figure {
+    margin-bottom: 1em;
+}
+
+p.caption, table caption, figcaption {
+    @include cap;
+}
+
+// p.caption {
+//     break-after: avoid;
+// }
+

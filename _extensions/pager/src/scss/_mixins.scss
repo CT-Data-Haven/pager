@@ -1,0 +1,56 @@
+@mixin cap() {
+    text-align: left;
+    // margin-top: 0.5em;
+    padding-top: 8px;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.5em;
+    font-size: $font-size-base;
+    font-weight: 700;
+    color: var(--caption-color, #4d5f7f);
+    text-transform: uppercase;
+    caption-side: top;
+    break-after: avoid;
+}
+
+@mixin cover($img) {
+    background-image: url($img);
+    background-position: center;
+    background-size: cover;
+    background-position: 0px 0px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: $body-bg;
+}
+
+@mixin logo($txt, $font, $color, $size: 1.75rem) {
+    font-family: $font, sans-serif;
+    font-size: $size;
+    line-height: 1rem;
+    color: $color;
+    content: $txt;
+}
+
+@mixin marginalia {
+    font-family: var(--body-font, 'sans-serif');
+    color: $primary-gray;
+    font-size: 0.85em;
+    vertical-align: middle;
+}
+
+@mixin side-content($fill-color) {
+    background-color: $fill-color;
+    border-radius: 3px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    height: 100%;
+
+    >p {
+        margin: 0;
+    }
+    >ul {
+        margin: 0.2em;
+    }
+    h2, h3, h4, h5, h6 {
+        margin-bottom: 0.1em;
+    }
+}
