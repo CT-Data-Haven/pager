@@ -5,13 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css": "sass -I node_modules scss/pager.scss ../pager.css --no-source-map"
+    "sass": "sass -I node_modules scss/pager.scss ../pager-working.css --no-source-map",
+    "postcss": "postcss ../pager-working.css --no-map --config postcss.config.js -o ../pager.css",
+    "css": "pnpm sass && pnpm postcss && rm ../pager-working.css"
   },
   "keywords": [],
   "author": "camille-s",
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "devDependencies": {
+    "cssnano": "^7.1.0",
+    "cssnano-preset-lite": "^4.0.4",
+    "postcss": "^8.5.6",
+    "postcss-calc": "^10.1.1",
+    "postcss-cli": "^11.0.1",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-preset-env": "^10.2.4",
     "sass": "^1.89.2"
   },
   "dependencies": {

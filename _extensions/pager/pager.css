@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*-- scss:uses --*/
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://db.onlinewebfonts.com/c/fa6584b49f2dbb17b7483544bfa0b654?family=GT+Pressura+Pro+Bold");
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
@@ -35,18 +34,14 @@
   --bs-gray-900: #212529;
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
-  --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
   --bs-primary-text-emphasis: rgb(5.2, 44, 101.2);
@@ -228,39 +223,21 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.425rem + 2.1vw);
-}
-@media (min-width: 1200px) {
-  h1, .h1 {
-    font-size: 3rem;
-  }
+  font-size: 3rem;
+  font-size: 3rem;
 }
 
 h2, .h2 {
-  font-size: calc(1.35rem + 1.2vw);
-}
-@media (min-width: 1200px) {
-  h2, .h2 {
-    font-size: 2.25rem;
-  }
+  font-size: 2.25rem;
+  border-bottom: none;
 }
 
 h3, .h3 {
-  font-size: calc(1.3rem + 0.6vw);
-}
-@media (min-width: 1200px) {
-  h3, .h3 {
-    font-size: 1.75rem;
-  }
+  font-size: 1.75rem;
 }
 
 h4, .h4 {
-  font-size: calc(1.275rem + 0.3vw);
-}
-@media (min-width: 1200px) {
-  h4, .h4 {
-    font-size: 1.5rem;
-  }
+  font-size: 1.5rem;
 }
 
 h5, .h5 {
@@ -274,6 +251,8 @@ h6, .h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  orphans: 3;
+  widows: 3;
 }
 
 abbr[title] {
@@ -521,12 +500,7 @@ legend {
   padding: 0;
   margin-bottom: 0.5rem;
   line-height: inherit;
-  font-size: calc(1.275rem + 0.3vw);
-}
-@media (min-width: 1200px) {
-  legend {
-    font-size: 1.5rem;
-  }
+  font-size: 1.5rem;
 }
 legend + * {
   clear: left;
@@ -601,67 +575,37 @@ progress {
 .display-1 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.625rem + 4.5vw);
-}
-@media (min-width: 1200px) {
-  .display-1 {
-    font-size: 5rem;
-  }
+  font-size: 5rem;
 }
 
 .display-2 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.575rem + 3.9vw);
-}
-@media (min-width: 1200px) {
-  .display-2 {
-    font-size: 4.5rem;
-  }
+  font-size: 4.5rem;
 }
 
 .display-3 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.525rem + 3.3vw);
-}
-@media (min-width: 1200px) {
-  .display-3 {
-    font-size: 4rem;
-  }
+  font-size: 4rem;
 }
 
 .display-4 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.475rem + 2.7vw);
-}
-@media (min-width: 1200px) {
-  .display-4 {
-    font-size: 3.5rem;
-  }
+  font-size: 3.5rem;
 }
 
 .display-5 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.425rem + 2.1vw);
-}
-@media (min-width: 1200px) {
-  .display-5 {
-    font-size: 3rem;
-  }
+  font-size: 3rem;
 }
 
 .display-6 {
   font-weight: 300;
   line-height: 1.2;
-  font-size: calc(1.375rem + 1.5vw);
-}
-@media (min-width: 1200px) {
-  .display-6 {
-    font-size: 2.5rem;
-  }
+  font-size: 2.5rem;
 }
 
 .list-unstyled {
@@ -721,6 +665,8 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
 }
 .row > * {
   flex-shrink: 0;
@@ -729,6 +675,8 @@ progress {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
 }
 
 .col {
@@ -1784,7 +1732,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-.table {
+.table, table {
   --bs-table-color-type: initial;
   --bs-table-bg-type: initial;
   --bs-table-color-state: initial;
@@ -1804,17 +1752,17 @@ progress {
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
-.table > :not(caption) > * > * {
+.table > :not(caption) > * > *, table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
   background-color: var(--bs-table-bg);
   border-bottom-width: var(--bs-border-width);
   box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
 }
-.table > tbody {
+.table > tbody, table > tbody {
   vertical-align: inherit;
 }
-.table > thead {
+.table > thead, table > thead {
   vertical-align: bottom;
 }
 
@@ -1826,7 +1774,7 @@ progress {
   caption-side: top;
 }
 
-.table-sm > :not(caption) > * > * {
+.table-sm > :not(caption) > * > *, table > :not(caption) > * > * {
   padding: 0.25rem 0.25rem;
 }
 
@@ -2013,15 +1961,6 @@ progress {
 }
 /*-- scss:mixins --*/
 /*-- scss:rules --*/
-.row {
-  margin-right: -0.75rem;
-  margin-left: -0.75rem;
-}
-
-.row > * {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-}
 
 /*-- user-defined rules --*/
 div.no-break,
@@ -2213,15 +2152,15 @@ h1.title, .title.h1 {
   string-set: title content();
 }
 
-section.level2 {
+section.level2, .chapter {
   break-before: always;
   page: chapter;
 }
-section.level2.no-break {
+section.level2.no-break, .chapter.no-break {
   break-before: unset;
 }
 
-section h2, section .h2 {
+section h2, section .h2, .chapter h2, .chapter .h2 {
   string-set: chapter-h2 content();
 }
 
@@ -2310,6 +2249,36 @@ div#marginalia-blocks #marginalia-bottom-right {
     text-align: right;
   }
 }
+#appendices section.level2, #appendices .chapter {
+  page: appendix;
+}
+
+@page appendix {
+  @top-left {
+    content: element(top-left);
+    text-align: left;
+  }
+  @top-center {
+    content: element(top-center);
+    text-align: center;
+  }
+  @top-right {
+    content: element(top-right);
+    text-align: right;
+  }
+  @bottom-left {
+    content: element(bottom-left);
+    text-align: left;
+  }
+  @bottom-center {
+    content: element(bottom-center);
+    text-align: center;
+  }
+  @bottom-right {
+    content: element(bottom-right);
+    text-align: right;
+  }
+}
 @media print {
   #TOC {
     display: block !important;
@@ -2325,7 +2294,7 @@ div#marginalia-blocks #marginalia-bottom-right {
   div#marginalia-blocks {
     display: none;
   }
-  section h2, section .h2 {
+  section h2, section .h2, .chapter h2, .chapter .h2 {
     margin-top: 2rem;
   }
 }
@@ -2336,11 +2305,6 @@ html {
 
 .big-text {
   font-size: 1.25rem;
-}
-
-h1,
-.h1 {
-  font-size: 3rem;
 }
 
 h1, .h1,
@@ -2368,10 +2332,6 @@ h3,
   text-transform: var(--headings-transform, "none");
 }
 
-h2, .h2 {
-  border-bottom: none;
-}
-
 h2, .h2,
 h3,
 .h3 {
@@ -2396,9 +2356,21 @@ h3,
   content: none;
 }
 
-p {
-  orphans: 3;
-  widows: 3;
+#appendices {
+  line-height: 1.35rem;
+}
+#appendices p, #appendices table {
+  font-size: 0.95rem !important;
+}
+#appendices table td, #appendices table th {
+  padding: 0.2rem;
+}
+
+#refs {
+  line-height: 1.35rem;
+}
+#refs div.csl-entry {
+  margin-bottom: 0.75rem;
 }
 
 ul {
@@ -2426,22 +2398,6 @@ div.spaced-list ul li {
 
 span.na {
   color: #6c757d;
-}
-
-table {
-  border-bottom: 1px solid var(--bs-border-color);
-  margin-bottom: 3rem;
-  break-inside: avoid;
-}
-table thead th {
-  font-weight: 500;
-}
-table.table-sm th, table.table-sm td {
-  line-height: 1.25em;
-}
-
-tr[grouplength] {
-  font-weight: 600;
 }
 
 img {

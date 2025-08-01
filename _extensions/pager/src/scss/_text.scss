@@ -66,3 +66,20 @@ p {
     orphans: 3;
     widows: 3;
 }
+
+#appendices {
+    line-height: 1.35rem;
+    p, table {
+        font-size: 0.95rem !important;
+    }
+    table td, table th {
+        padding: 0.2rem;
+    }
+}
+
+#refs {
+    div.csl-entry {
+        margin-bottom: 0.75rem;
+    }
+    line-height: 1.35rem;
+}

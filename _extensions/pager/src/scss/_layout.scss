@@ -58,12 +58,11 @@ header#title-block-header {
     page: frontmatter;
 }
 
-
 h1.title {
     string-set: title content();
 }
 
-section.level2 {
+section.level2, .chapter {
     break-before: always;
     page: chapter;
     &.no-break {
@@ -71,7 +70,7 @@ section.level2 {
     }
 }
 
-section h2 {
+section h2, .chapter h2 {
     string-set: chapter-h2 content();
 }
 
@@ -147,6 +146,44 @@ div#marginalia-blocks {
     }
 }
 
+#appendices {
+    section.level2, .chapter {
+        page: appendix;
+    }
+}
+
+@page appendix {
+    @top-left {
+        content: element(top-left);
+        text-align: left;
+    }
+
+    @top-center {
+        content: element(top-center);
+        text-align: center;
+    }
+
+    @top-right {
+        content: element(top-right);
+        text-align: right;
+    }
+
+    @bottom-left {
+        content: element(bottom-left);
+        text-align: left;
+    }
+
+    @bottom-center {
+        content: element(bottom-center);
+        text-align: center;
+    }
+
+    @bottom-right {
+        content: element(bottom-right);
+        text-align: right;
+    }
+}
+
 
 @media print {
     #TOC {
@@ -167,7 +204,7 @@ div#marginalia-blocks {
         display: none;
     }
 
-    section h2 {
+    section h2, .chapter h2 {
         margin-top: 2rem;
     }
 }

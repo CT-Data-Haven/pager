@@ -7,8 +7,9 @@
 @use "sass:color";
 
 /*-- scss:uses --*/
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://db.onlinewebfonts.com/c/fa6584b49f2dbb17b7483544bfa0b654?family=GT+Pressura+Pro+Bold'); 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
@@ -16,6 +17,8 @@
 // Toggle global options
 $enable-gradients: false;
 $enable-shadows: false;
+$enable-cssgrid: false;
+$enable-rfs: false;
 
 /*-- scss:functions --*/
 @import 'bootstrap/scss/functions';
@@ -49,6 +52,8 @@ $body-bg: transparent;
 // required
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/variables-dark';
+
+$theme-colors: map-remove($theme-colors, 'danger', 'success');
 
 @import 'bootstrap/scss/maps';
 @import 'bootstrap/scss/mixins';
