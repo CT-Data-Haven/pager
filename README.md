@@ -1,7 +1,3 @@
----
-format: gfm
----
-
 # :pager: pager custom Quarto format
 
 `pager` is a custom format for Quarto. There are 2 versions: 
