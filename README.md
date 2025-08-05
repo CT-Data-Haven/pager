@@ -1,9 +1,15 @@
+---
+format: gfm
+---
+
 # :pager: pager custom Quarto format
 
 `pager` is a custom format for Quarto. There are 2 versions: 
 
 * `pager-html` is just a minimal HTML format with a subset of Bootstrap included
-* `pager-pdf` takes that HTML document and "prints" it to a PDF using [Weasyprint](https://weasyprint.org/) ^[Other html-to-pdf engines will probably work too, like [pagedjs](https://gitlab.coko.foundation/pagedjs/pagedjs-cli), but Weasyprint, while limited in the CSS it handles, is relatively better maintained.] 
+* `pager-pdf` takes that HTML document and "prints" it to a PDF using [Weasyprint](https://weasyprint.org/) [^1] 
+
+[^1]: Other html-to-pdf engines will probably work too, like [pagedjs](https://gitlab.coko.foundation/pagedjs/pagedjs-cli), but Weasyprint, while limited in the CSS it handles, is relatively better maintained.
 
 ## Installation
 
@@ -26,9 +32,13 @@ quarto render document.qmd --to pager-pdf
 
 or using "Render" buttons or commands in any IDE. You can also pass additional arguments to Quarto and Pandoc like with any Quarto document.
 
+See the files template.html and template.pdf for example output (in the repo but not included in installation).
+
 ## Format options
 
-Because this format was designed for the creation of a fairly complex, printable document, I included a lot of options for tweaking, with default values that closely follow the settings for that project. Options are nested in your document's YAML to make them more organized and easier to refer to ^[Shout out to [kantiles/quarto.report](https://github.com/kantiles/quarto.report) for this idea.]. All values other than Quarto/Pandoc's built-in options are shown here with their default values.
+Because this format was designed for the creation of a fairly complex, printable document, I included a lot of options for tweaking, with default values that closely follow the settings for that project. Options are nested in your document's YAML to make them more organized and easier to refer to [^2]. All values other than Quarto/Pandoc's built-in options are shown here with their default values.
+
+[^2]: Shout out to [kantiles/quarto.report](https://github.com/kantiles/quarto.report) for this idea.
 
 ```yaml
 heading-font: "Barlow" # name of font to use for headings
