@@ -18,10 +18,14 @@ header#title-block-header {
 
 @media print {
     .cover-page {
-        position: relative;
+        // position: relative;
+        // height: 100%;
+        // height: var(--page-height);
     }
     #title-block-subheader {
-        margin-top: $spacer * 2;
+        // margin-top: $spacer * 2;
+        // position: absolute;
+        // bottom: 10%;
     }
     .frontmatter-page div.blurb {
         position: absolute;

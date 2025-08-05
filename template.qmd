@@ -1,0 +1,142 @@
+---
+title: Pager report
+subtitle: A Quarto extension for HTML-to-PDF printing
+date: last-modified
+date-format: "MMMM YYYY"
+author: DataHaven
+frontmatter: |
+  ### About this document 
+  
+  Dolor aute tempor exercitation voluptate dolor cillum adipisicing irure anim anim laborum sunt excepteur velit. Labore nulla in magna fugiat dolor. Dolor quis deserunt esse incididunt.
+execute: 
+  echo: false
+  warning: false
+
+format:
+  pager-html: default
+  pager-pdf: 
+    cover:
+      img: file:///home/camille/code/pager/cover.svg
+    marginalia:
+      chapter: top-right
+      page-number: bottom-right
+csl: apa-numeric-superscript.csl
+bibliography: common-refs.json
+citation: 
+  url: https://www.ctdatahaven.org
+---
+
+## First chapter 
+
+This is a Quarto format to standardize short reports at DataHaven. It comes with easy parameters for several formatting options. This format renders to HTML, and can optionally then be formatted as paged media and "printed" to PDF. Several tools are used behind the scenes to make this happen.
+
+Based on parameters in the yaml frontmatter describing a logo, you can quickly place a stylized text logo wherever you want with an empty HTML element with the class `"logo"`, such as this one. This is optionally also used to put a logo in the footer.
+
+<div class="logo"></div>
+
+The format takes some styling parameters as yaml dictionaries in order to keep them organized. For example, the default colors are set as named subsets of the `color` dictionary:
+
+```yaml
+color:
+  heading: "#3C78E4"
+  caption: "#8983ca"
+  sidebar: "#dfeffd"
+  gray: "#4d5f7f"
+```
+
+<div class="w-25 pager-aside-right">
+This is an aside. It uses a utility class `"w-25"` to take up 25% of the container width, and `"pager-aside-right"` for its styling and to place it on the right with wrapped text. Use just `"pager-aside"` for styling but not placement.
+</div>
+
+These should be fairly straightforward, but one dictionary sets up marginalia for the header and footer of each chapter page. The optional types of marginalia are the document title, running chapter title (the `<h2>` elements, created in markdown with `##`), page number, logo, and a label for the document being a draft, as indicated by the `is-draft` specification in the yaml. Each of these can get a value of `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, or `bottom-right`. If more than one element is given the same position, only the first one to be processed will be used. All but chapter headers are included by default; to turn any of them off, set their value to `null` or `false`. The easiest way to turn all marginalia off is setting `marginalia: false` or something else that won't evaluate to a dictionary.
+
+<div class="row">
+
+<div class="col-4">
+
+Here's a placeholder for if you want to use Bootstrap columns. This first column is 1/3 the width of the page. The second column has a table. This is often a good ratio for a short paragraph of text paired with a larger chart or table.
+
+</div>
+
+<div class="col-8">
+
+```{r}
+#| label: iris-tbl
+#| tbl-cap: Mean values by species, iris dataset
+with(iris, 
+     aggregate(iris[, 1:4],
+     by = list(Species),
+     FUN = mean)) |>
+  knitr::kable()
+```
+
+</div>
+
+</div>
+
+<div class="no-break">
+
+Here's a chart. Note that captions for tables and charts have matching styling. I've wrapped this paragraph and the chart in a `<div>` with class `"no-break"` to keep them together.
+
+### Styling
+
+There are a few custom styling utilities built into the CSS that ships with this extension (see _extensions/pager/pager.css). These are in addition to a subset of Bootstrap, including the text, grid, and table modules. That means that many of Bootstrap's classes are available to you automatically.
+
+```{r}
+#| label: iris-chart
+#| fig-cap: Distribution of sepal length, iris dataset
+#| fig-height: 3
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_point(slpha = 0.9)
+```
+
+</div>
+
+## Second chapter
+
+<div class="row">
+
+<div class="col-8">
+
+Since this chapter starts with a `<h2>` element (`##` in markdown), it starts on a new page.
+
+### About citations
+
+Let's pretend this is a meaningful citation, using the APA styling file and a starter set of common sources we cite [@ipums]. Here's another [@dcws]. Pandoc generates the bibliography and places it in a `div` called `"refs"` at the very end of the document; in order to give that section a proper heading that still gets a page number, make a `h2`-level heading with the title of your choice---see below. If instead you're using your own notes (as we often do), set `suppress-bibliography: true` in the document's yaml and add the notes manually.
+
+</div>
+
+<div class="col-4">
+
+<div class="pager-sidebar">
+### Fun fact
+
+Here's a sidebar. It's a `<div>` with the class `"pager-sidebar"`, inside of a standard Bootstrap row-column setup. Because it's created inside a row alongside another column, their heights are the same, leaving empty space here. 
+</div>
+
+</div>
+
+</div>
+
+Pariatur non elit sunt cupidatat. Est pariatur exercitation cillum ut veniam irure eiusmod et aute consequat tempor. Ad est ullamco voluptate eu nisi id quis ullamco labore ut elit occaecat consequat. Sit dolore excepteur nulla amet magna adipisicing in irure ut ex dolor veniam incididunt laborum.
+
+:::{#appendices}
+
+## Appendix A
+
+Here's an appendix. By placing it inside a block with the ID `"appendices`", it gets a new page type with slightly smaller text and shorter line heights. It also has more compact tables. 
+
+```{r}
+#| label: appendix-tbl
+#| tbl-cap: Supplementary details 
+knitr::kable(iris[c(1:20, 51:60, 101:110), ]) 
+```
+
+## Appendix B 
+
+Here's another appendix to illustrate that it starts another appendix-style page.
+
+:::
+
+## References

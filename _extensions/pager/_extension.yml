@@ -26,7 +26,12 @@ contributes:
       margin-right: 0.5in
       margin-top: 0.75in
       margin-bottom: 0.75in
-      
+      toc: true
+      toc-depth: 2
+      toc-location: body
+      prefer-html: true
+      fig-format: "svg"
+
       heading-font: "Barlow"
       is-draft: true
 
@@ -36,7 +41,6 @@ contributes:
         sidebar: "#edfaffee"
         aside: "#fdfbedee"
         gray: "#4d5f7f"
- 
       logo:
         use-text: true
         text: "DataHaven"
@@ -61,12 +65,6 @@ contributes:
         draft: top-center
         draft-include-date: true
         chapter: null
-
-      toc: true
-      toc-depth: 2
-      toc-location: body
-      prefer-html: true
-      fig-format: "svg"
 
     html:
       template: "html/template.html"

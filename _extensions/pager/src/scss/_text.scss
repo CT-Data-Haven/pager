@@ -69,11 +69,12 @@ p {
 
 #appendices {
     line-height: 1.35rem;
-    p, table {
-        font-size: 0.95rem !important;
+    p {
+        font-size: 0.95rem;
     }
     table td, table th {
         padding: 0.2rem;
+        font-size: 13px;
     }
 }
 

@@ -10,9 +10,47 @@
         </nav>
     $endif$
 
-    $for(frontmatter)$
-        <div class="blurb">
+    <div class="blurb">
+        $for(frontmatter)$
             $frontmatter$
-        </div>
-    $endfor$
+        $endfor$
+
+        $if(citation)$
+            <div class="citation">
+                <h3>Recommended citation</h3>
+                <p>
+                    $if(citation.author)$
+                        $citation.author[, ]$. 
+                    $elseif(author)$
+                        $author[, ]$. 
+                    $endif$
+
+                    $if(citation.date)$
+                        ($citation.date$).
+                    $elseif(date)$
+                        ($date$).
+                    $endif$
+
+                    $if(citation.title)$
+                        $citation.title$.
+                    $else$
+                        $title$.
+                    $endif$
+
+                    $if(citation.publisher)$
+                        $citation.publisher$.
+                    $elseif(publisher)$
+                        $publisher$.
+                    $endif$
+
+                    $if(citation.url)$
+                        Available at <a href="$citation.url$">$citation.url$</a>.
+                    $elseif(url)$
+                        Available at <a href="$url$">$url$</a>.
+                    $endif$
+                </p>
+            </div>
+        $endif$ 
+    </div>
+
 </div>

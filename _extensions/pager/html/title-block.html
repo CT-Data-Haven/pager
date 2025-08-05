@@ -9,7 +9,11 @@
 
         <div id="title-block-subheader">
             $for(author)$
-                <p class="author">$author$</p>
+                $if(it.name)$
+                    <p class="author">$it.name$</p>
+                $else$
+                    <p class="author">$it$</p>
+                $endif$
             $endfor$
     
 
