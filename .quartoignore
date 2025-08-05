@@ -1,2 +1,4 @@
 _extensions/pager/src
 Snakefile
+template.html
+template.pdf
