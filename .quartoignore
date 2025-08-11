@@ -1,4 +1,7 @@
-_extensions/pager/src
+**/src/
 Snakefile
 template.html
 template.pdf
+template_files/
+.github/
+
