@@ -1,5 +1,4 @@
-_extensions/pager/src/
-src/
+_extensions/ct-data-haven/pager/src/
 Snakefile
 template.html
 template.pdf
